@@ -93,7 +93,6 @@
     <!-- Header Simples de Checkout -->
     <header class="w-full py-6 px-4 border-b border-gold/10 relative z-10 flex justify-center items-center bg-black/50 backdrop-blur-md">
         <div class="flex items-center gap-3">
-            <!-- Ícone substituído por um Escudo Dourado de Segurança do FontAwesome -->
             <i class="fa-solid fa-shield-halved text-gold text-2xl md:text-3xl drop-shadow-[0_0_10px_rgba(212,175,55,0.7)]"></i>
             <h1 class="font-cinzel text-xl md:text-2xl font-bold gold-gradient-text tracking-widest uppercase">Ambiente Seguro</h1>
         </div>
@@ -101,81 +100,102 @@
 
     <!-- Conteúdo Principal do Checkout -->
     <main class="flex-grow flex items-center justify-center py-12 md:py-20 px-4 relative z-10">
-        <div class="w-full max-w-5xl mx-auto">
+        <div class="w-full max-w-7xl mx-auto">
             
             <div class="text-center mb-12 md:mb-16">
                 <h2 class="font-cinzel text-3xl md:text-5xl gold-gradient-text mb-4 font-black tracking-tight leading-tight">
                     Escolha a Sua Jornada Sagrada
                 </h2>
-                <p class="text-slate-400 text-sm md:text-base tracking-widest uppercase">Selecione o seu pacote para avançar para o pagamento seguro</p>
+                <p class="text-slate-400 text-sm md:text-base tracking-widest uppercase">Selecione o seu nível de profundidade astrológica abaixo</p>
             </div>
             
-            <!-- Cards de Preços (Com Upsell) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto items-stretch">
+            <!-- Cards de Preços (3 Opções) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8 max-w-6xl mx-auto items-stretch">
                 
-                <!-- Opção 1: Oferta Básica -->
-                <div class="card-glass p-8 md:p-10 rounded-[2rem] border border-gold/20 flex flex-col h-full relative bg-slate-900/60">
-                    <h3 class="font-cinzel text-2xl md:text-3xl text-[#f3e5ab] mb-2 font-bold">O Livro das Estrelas</h3>
-                    <p class="text-slate-400 text-xs md:text-sm mb-6">Mapa Astral Premium Completo</p>
+                <!-- OPÇÃO 1: OFERTA BÁSICA -->
+                <div class="card-glass p-8 md:p-8 rounded-[2rem] border border-gold/20 flex flex-col h-full relative bg-slate-900/60 mt-8 lg:mt-6">
+                    <h3 class="font-cinzel text-xl md:text-2xl text-[#f3e5ab] mb-2 font-bold">Pacote Essência</h3>
+                    <p class="text-slate-400 text-xs mb-6 h-8">O Livro das Estrelas (Mapa Astral Completo)</p>
                     
-                    <div class="text-4xl md:text-5xl font-black text-white mb-8">R$ 147</div>
+                    <div class="text-3xl md:text-4xl font-black text-white mb-8">R$ 147</div>
                     
-                    <ul class="text-slate-300 text-sm space-y-4 mb-10 flex-grow">
+                    <ul class="text-slate-300 text-xs md:text-sm space-y-4 mb-10 flex-grow">
                         <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span>Análise da Arquitetura da Alma (10 Planetas)</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span>Leitura dos Eixos de Destino (Kármico)</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span>Leitura dos Eixos de Destino (Karma)</span></li>
                         <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span>Estudo de Compatibilidade Afetiva</span></li>
                         <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span>Almanaque de Banhos & Salmos Mensais</span></li>
                     </ul>
                     
-                    <!-- LINK DO PAGSEGURO ORIGINAL AQUI -->
-                    <a href="https://pag.ae/81wvr8217/button" target="_blank" class="w-full py-4 md:py-5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition duration-300 font-bold tracking-[0.1em] md:tracking-[0.2em] uppercase text-xs md:text-sm text-center z-10">
-                        Quero Apenas o Mapa
+                    <a href="https://pag.ae/81wvr8217/button" target="_blank" class="w-full py-4 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition duration-300 font-bold tracking-widest uppercase text-[11px] md:text-xs text-center z-10">
+                        Quero o Mapa Base
                     </a>
                 </div>
 
-                <!-- Opção 2: Oferta UPSELL (Combo VIP) -->
-                <div class="p-8 md:p-10 rounded-[2rem] border-2 border-gold flex flex-col h-full relative shadow-[0_0_40px_rgba(212,175,55,0.15)] bg-gradient-to-b from-gold/15 to-slate-900/80 md:-translate-y-4 mt-8 md:mt-0">
+                <!-- OPÇÃO 3: COMBO PREMIUM TOTAL (VIP - NO MEIO PARA DESTAQUE) -->
+                <div class="p-8 md:p-10 rounded-[2rem] border-2 border-gold flex flex-col h-full relative shadow-[0_0_40px_rgba(212,175,55,0.2)] bg-gradient-to-b from-gold/15 to-slate-900/80 lg:-translate-y-4 order-first lg:order-none z-20">
                     
-                    <!-- Selo de Mais Escolhido - CORRIGIDO: Cor de fundo sólida e z-index elevado -->
+                    <!-- Selo de Mais Escolhida -->
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#d4af37] text-black font-black text-[10px] md:text-xs uppercase tracking-widest py-1.5 px-6 rounded-full w-max shadow-[0_0_15px_rgba(212,175,55,0.5)] z-20">
-                        ⭐ Oferta Mais Escolhida
+                        ⭐ A Experiência Completa
                     </div>
                     
-                    <h3 class="font-cinzel text-2xl md:text-3xl text-white mb-2 font-bold mt-4">Combo Destino VIP</h3>
-                    <p class="text-slate-400 text-xs md:text-sm mb-6">O Livro das Estrelas + Guia 2026</p>
+                    <h3 class="font-cinzel text-2xl md:text-3xl text-white mb-2 font-bold mt-2">Combo Premium</h3>
+                    <p class="text-gold-light font-medium text-xs md:text-sm mb-6 h-8">Mapa + Guia de Pedras + Previsões 2026</p>
                     
                     <div class="flex items-end gap-3 mb-6">
-                        <span class="text-slate-500 line-through text-lg md:text-xl font-bold mb-1">R$ 247</span>
-                        <div class="text-5xl md:text-6xl font-black gold-gradient-text drop-shadow-md">R$ 197</div>
+                        <span class="text-slate-500 line-through text-lg font-bold mb-1">R$ 297</span>
+                        <div class="text-5xl md:text-6xl font-black gold-gradient-text drop-shadow-md">R$ 217</div>
                     </div>
                     
-                    <ul class="text-slate-300 text-sm space-y-4 mb-6 flex-grow">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span class="text-white font-semibold">Tudo incluído no "Livro das Estrelas"</span></li>
+                    <ul class="text-slate-300 text-xs md:text-sm space-y-4 mb-6 flex-grow">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span class="text-white font-semibold">Tudo incluído no "Pacote Essência"</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span class="text-white font-semibold">Tudo incluído no "Combo Alquimia"</span></li>
                         
-                        <!-- Destaque do Bônus -->
-                        <li class="flex items-start bg-black/40 p-4 rounded-xl border border-gold/30 mt-4 backdrop-blur-sm">
-                            <i class="fa-solid fa-plus text-gold mt-0.5 mr-3"></i> 
-                            <span><strong class="text-gold uppercase tracking-wider block mb-1 text-xs">Acesso Exclusivo Incluído:</strong> Adicione o <strong>Guia de Previsões Estratégicas para 2026</strong> por apenas mais <span class="text-gold">R$ 50</span> e saiba exatamente como agir nos próximos 12 meses.</span>
+                        <li class="flex items-start bg-black/40 p-4 rounded-xl border border-gold/40 mt-4 backdrop-blur-sm">
+                            <i class="fa-solid fa-star text-gold mt-0.5 mr-3"></i> 
+                            <span><strong class="text-gold uppercase tracking-wider block mb-1 text-[10px]">O Dossiê de Ouro Incluído:</strong> Acesso ao extenso <strong>Guia Estratégico 2026</strong> (+20 páginas) com o seu Arcano Regente e previsões financeiras e amorosas mês a mês.</span>
                         </li>
                     </ul>
                     
-                    <!-- NOVO LINK PAGSEGURO PARA O VALOR DE R$197 AQUI -->
-                    <a href="https://pag.ae/81wx5MSYP" target="_blank" class="gold-button font-cinzel font-bold py-4 md:py-5 px-6 rounded-full text-sm md:text-lg tracking-[0.1em] uppercase shadow-2xl w-full text-center mt-auto mb-3 z-10">
-                        QUERO O COMBO COMPLETO
+                    <a href="https://pag.ae/81wxxxEus" target="_blank" class="gold-button font-cinzel font-bold py-5 px-4 rounded-full text-xs md:text-sm tracking-widest uppercase shadow-2xl w-full text-center mt-auto mb-3 z-10">
+                        QUERO O COMBO PREMIUM
                     </a>
                     
-                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest font-bold text-center"><i class="fa-solid fa-lock mr-1 text-gold"></i> Processamento Seguro e Encriptado</p>
+                    <p class="text-[9px] text-slate-400 uppercase tracking-widest font-bold text-center"><i class="fa-solid fa-lock mr-1 text-gold"></i> Processamento Seguro</p>
                 </div>
+
+                <!-- OPÇÃO 2: COMBO INTERMEDIÁRIO -->
+                <div class="card-glass p-8 md:p-8 rounded-[2rem] border border-gold/40 flex flex-col h-full relative bg-slate-900/70 mt-8 lg:mt-6">
+                    <h3 class="font-cinzel text-xl md:text-2xl text-[#f3e5ab] mb-2 font-bold">Combo Alquimia</h3>
+                    <p class="text-slate-400 text-xs mb-6 h-8">Mapa Astral + Guia de Pedras e Ervas</p>
+                    
+                    <div class="flex items-end gap-3 mb-8">
+                        <span class="text-slate-500 line-through text-sm font-bold mb-1">R$ 187</span>
+                        <div class="text-3xl md:text-4xl font-black text-white">R$ 167</div>
+                    </div>
+                    
+                    <ul class="text-slate-300 text-xs md:text-sm space-y-4 mb-10 flex-grow">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-gold mt-1 mr-3"></i> <span class="text-white font-semibold">Tudo incluído no "Pacote Essência"</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-plus text-gold mt-1 mr-3"></i> <span>Guia de Cristais do seu Signo</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-plus text-gold mt-1 mr-3"></i> <span>Incensos e Botânica Sagrada</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-plus text-gold mt-1 mr-3"></i> <span>Protocolo de Limpeza de Pedras</span></li>
+                    </ul>
+                    
+                    <a href="https://pag.ae/81wxwN9M7" target="_blank" class="w-full py-4 rounded-full border-2 border-gold text-gold hover:bg-gold hover:text-black transition duration-300 font-bold tracking-widest uppercase text-[11px] md:text-xs text-center z-10">
+                        Quero o Combo Alquimia
+                    </a>
+                </div>
+
             </div>
             
             <!-- Garantia -->
-            <div class="mt-16 text-center flex flex-col items-center justify-center opacity-70">
+            <div class="mt-20 text-center flex flex-col items-center justify-center opacity-70">
                 <div class="flex gap-4 mb-3 text-gold text-2xl">
                     <i class="fa-brands fa-cc-visa"></i>
                     <i class="fa-brands fa-cc-mastercard"></i>
                     <i class="fa-brands fa-pix"></i>
                 </div>
-                <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Os seus dados estão protegidos pelo PagSeguro</p>
+                <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Os seus dados estão protegidos pela encriptação do PagSeguro</p>
             </div>
 
         </div>

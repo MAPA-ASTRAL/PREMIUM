@@ -21,6 +21,7 @@
             background-color: var(--deep-night);
             color: #d1d5db;
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Evita scroll horizontal acidental */
         }
 
         .font-cinzel { font-family: 'Cinzel', serif; }
@@ -110,12 +111,21 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+
+        /* Ajustes Mobile Adicionais */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; line-height: 1; }
+            .hero-subtitle { font-size: 1.25rem; }
+            .cta-btn-large { padding: 1.5rem 2rem; font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            #social-proof { top: 20px; bottom: auto; left: 50%; transform: translateX(-50%); width: 90%; }
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Faixa de Urgência -->
-    <div class="bg-black text-amber-400 text-center py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.4em] border-b border-gold/20 relative z-20">
+    <div class="bg-black text-amber-400 text-center py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.4em] border-b border-gold/20 relative z-20 px-2 leading-tight">
         ✨ Portal Aberto: Garanta sua Leitura Sagrada antes da Virada Lunar
     </div>
 
@@ -124,57 +134,58 @@
         <!-- Container dos Astros e Estrelas -->
         <div id="stars-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
-        <div class="max-w-5xl w-full text-center z-10">
+        <div class="max-w-5xl w-full text-center z-10 py-10">
             
             <!-- Ícone Astrológico Personalizado Flutuante e Sem Fundo -->
-            <div class="flex justify-center mb-8">
-                <div class="w-40 h-40 md:w-56 md:h-56 glow-icon flex items-center justify-center">
+            <div class="flex justify-center mb-6 md:mb-8">
+                <div class="w-32 h-32 md:w-56 md:h-56 glow-icon flex items-center justify-center">
                     <img src="ICONE.ico" alt="Ícone Astral" class="w-full h-full object-contain filter drop-shadow-[0_0_25px_rgba(212,175,55,0.7)]">
                 </div>
             </div>
             
-            <h1 class="font-cinzel text-5xl md:text-8xl font-black mb-8 gold-gradient-text leading-[0.9] tracking-tighter">
+            <h1 class="font-cinzel text-5xl md:text-8xl font-black mb-6 md:mb-8 gold-gradient-text leading-[1] md:leading-[0.9] tracking-tighter">
                 O Livro <br> das Estrelas
             </h1>
             
-            <p class="text-xl md:text-3xl text-slate-200 mb-14 italic max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-                "Não é o acaso que move sua vida. <br> 
+            <p class="text-lg md:text-3xl text-slate-200 mb-10 md:mb-14 italic max-w-3xl mx-auto leading-relaxed drop-shadow-md px-2">
+                "Não é o acaso que move sua vida. <br class="hidden md:block"> 
                 <span class="text-gold">Sua biografia já foi escrita no firmamento."</span>
             </p>
             
-            <div class="flex flex-col items-center gap-6">
+            <div class="flex flex-col items-center gap-4 md:gap-6">
                 <!-- Botão de Compra -->
-                <a href="https://pag.ae/81wvr8217/button" target="_blank" class="gold-button font-cinzel font-black py-8 px-16 rounded-full text-xl md:text-3xl tracking-[0.2em] uppercase relative z-20">
+                <a href="https://pag.ae/81wvr8217/button" target="_blank" class="gold-button font-cinzel font-black py-4 px-8 md:py-8 md:px-16 rounded-full text-lg md:text-3xl tracking-[0.1em] md:tracking-[0.2em] uppercase relative z-20 text-center w-full max-w-xs md:max-w-none">
                     Consagrar Meu Livro
                 </a>
                 
                 <!-- Frase de Segurança -->
-                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mt-2"><i class="fa-solid fa-lock mr-2 text-gold"></i> Pagamento 100% Seguro</p>
+                <p class="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest font-bold mt-2 flex items-center justify-center"><i class="fa-solid fa-lock mr-2 text-gold"></i> Pagamento 100% Seguro</p>
             </div>
         </div>
     </section>
 
     <!-- Convite da Astróloga -->
-    <section class="py-32 bg-black px-4 border-y border-gold/10 relative z-10">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="font-cinzel text-3xl md:text-5xl text-white mb-8">A Sabedoria <br><span class="gold-gradient-text">que vem do Alto.</span></h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+    <section class="py-16 md:py-32 bg-black px-4 border-y border-gold/10 relative z-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div class="order-2 lg:order-1 text-center md:text-left">
+                <h2 class="font-cinzel text-3xl md:text-5xl text-white mb-6 md:mb-8 leading-tight">A Sabedoria <br class="hidden md:block"><span class="gold-gradient-text">que vem do Alto.</span></h2>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
                     Eu não entrego um relatório automático. Eu consagro uma jornada. O <strong>Livro das Estrelas</strong> une a precisão técnica da astrologia tradicional com a visão oracular do Tarot. São mais de 25 páginas dedicadas exclusivamente à geometria sagrada do seu nascimento.
                 </p>
-                <div class="flex items-center gap-6">
-                    <div class="w-16 h-px bg-gold"></div>
-                    <span class="font-cinzel text-gold tracking-widest text-sm uppercase">Leitura Individualizada</span>
+                <div class="flex items-center justify-center md:justify-start gap-4 md:gap-6">
+                    <div class="w-12 md:w-16 h-px bg-gold"></div>
+                    <span class="font-cinzel text-gold tracking-widest text-xs md:text-sm uppercase">Leitura Individualizada</span>
+                    <div class="w-12 md:w-16 h-px bg-gold md:hidden"></div>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-gold/10 rounded-[3rem] blur-3xl"></div>
-                    <div class="relative border-2 border-gold/30 rounded-[3rem] overflow-hidden p-2 bg-slate-900/50">
+            <div class="order-1 lg:order-2 px-4 md:px-0">
+                <div class="relative max-w-md mx-auto">
+                    <div class="absolute -inset-4 bg-gold/10 rounded-[2rem] md:rounded-[3rem] blur-2xl md:blur-3xl"></div>
+                    <div class="relative border-2 border-gold/30 rounded-[2rem] md:rounded-[3rem] overflow-hidden p-2 bg-slate-900/50">
                         <!-- Imagem da Mulher Esotérica -->
                         <img src="IMAGEM MULHER.ico" 
                              alt="Leitura Esotérica" 
-                             class="w-full h-auto object-cover rounded-[2.5rem] opacity-90 hover:opacity-100 transition duration-500">
+                             class="w-full h-auto object-cover rounded-[1.5rem] md:rounded-[2.5rem] opacity-90 hover:opacity-100 transition duration-500">
                     </div>
                 </div>
             </div>
@@ -182,251 +193,257 @@
     </section>
 
     <!-- Pilares do Livro -->
-    <section class="py-32 px-4 relative bg-slate-950 overflow-hidden">
+    <section class="py-16 md:py-32 px-4 relative bg-slate-950 overflow-hidden">
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-24">
-                <h2 class="font-cinzel text-4xl md:text-6xl gold-gradient-text mb-6">O Que os Astros Revelam</h2>
-                <div class="w-24 h-1 bg-gold mx-auto rounded-full"></div>
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="font-cinzel text-3xl md:text-6xl gold-gradient-text mb-4 md:mb-6">O Que os Astros Revelam</h2>
+                <div class="w-16 md:w-24 h-1 bg-gold mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Arquitetura -->
-                <div class="p-12 card-glass rounded-[2.5rem] group">
-                    <i class="fa-solid fa-compass-drafting text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Arquitetura da Alma</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Descubra a luz e a sombra dos 10 planetas principais. Entenda sua verdadeira essência além do signo solar.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group">
+                    <i class="fa-solid fa-compass-drafting text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter">Arquitetura da Alma</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Descubra a luz e a sombra dos 10 planetas principais. Entenda sua verdadeira essência além do signo solar.</p>
                 </div>
                 <!-- Eixos -->
-                <div class="p-12 card-glass rounded-[2.5rem] group">
-                    <i class="fa-solid fa-mountain text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Eixos de Destino</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Seu Ascendente, Meio do Céu e Nódulo Norte. A máscara que você usa e o legado que veio construir.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group">
+                    <i class="fa-solid fa-mountain text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter">Eixos de Destino</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Seu Ascendente, Meio do Céu e Nódulo Norte. A máscara que você usa e o legado que veio construir.</p>
                 </div>
                 <!-- Tarot -->
-                <div class="p-12 card-glass rounded-[2.5rem] group border-gold/40">
-                    <i class="fa-solid fa-wand-sparkles text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Oráculo de 2026</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Seu Arcano Regente calculado para os próximos 12 meses. O conselho mestre para sua evolução.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group border-gold/40 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <i class="fa-solid fa-wand-sparkles text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition relative z-10"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter relative z-10">Oráculo de 2026</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed relative z-10">Seu Arcano Regente calculado para os próximos 12 meses. O conselho mestre para sua evolução.</p>
                 </div>
                 <!-- Rituais -->
-                <div class="p-12 card-glass rounded-[2.5rem] group">
-                    <i class="fa-solid fa-mortar-pestle text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Banhos & Salmos</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Um guia mensal com ervas sagradas e salmos de ativação para alinhar sua energia a cada lua.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group">
+                    <i class="fa-solid fa-mortar-pestle text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter">Banhos & Salmos</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Um guia mensal com ervas sagradas e salmos de ativação para alinhar sua energia a cada lua.</p>
                 </div>
                 <!-- Afetividade -->
-                <div class="p-12 card-glass rounded-[2.5rem] group">
-                    <i class="fa-solid fa-heart text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Campo Afetivo</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Como sua Vênus e Lua interagem. Entenda seus padrões de atração e cure seus relacionamentos.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group">
+                    <i class="fa-solid fa-heart text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter">Campo Afetivo</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Como sua Vênus e Lua interagem. Entenda seus padrões de atração e cure seus relacionamentos.</p>
                 </div>
                 <!-- Exclusividade -->
-                <div class="p-12 card-glass rounded-[2.5rem] group bg-white/5 border-gold shadow-gold/20 shadow-2xl">
-                    <i class="fa-solid fa-scroll text-3xl mb-8 text-gold group-hover:rotate-12 transition"></i>
-                    <h3 class="font-cinzel text-2xl font-bold mb-4 text-[#f3e5ab] uppercase tracking-tighter">Obra Digital Premium</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Não é um arquivo comum. É um livro diagramado com estética de luxo, entregue em alta resolução.</p>
+                <div class="p-8 md:p-12 card-glass rounded-[2rem] group bg-white/5 border-gold shadow-gold/20 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-gold/10 text-8xl"><i class="fa-solid fa-crown"></i></div>
+                    <i class="fa-solid fa-scroll text-3xl mb-6 md:mb-8 text-gold group-hover:rotate-12 transition relative z-10"></i>
+                    <h3 class="font-cinzel text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#f3e5ab] uppercase tracking-tighter relative z-10">Obra Digital Premium</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed relative z-10">Não é um arquivo comum. É um livro diagramado com estética de luxo, entregue em alta resolução.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Urgência e Reserva -->
-    <section class="py-24 px-4 bg-slate-950">
-        <div class="max-w-4xl mx-auto bg-gold/5 border-2 border-gold/20 p-16 rounded-[4rem] text-center relative overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.05)]">
-            <div class="absolute top-0 right-0 p-8 opacity-10"><i class="fa-solid fa-hourglass-start text-8xl text-gold"></i></div>
-            <h2 class="font-cinzel text-3xl text-gold mb-8 italic uppercase tracking-widest">Leituras Limitadas</h2>
-            <p class="text-slate-300 mb-12 text-lg">
+    <section class="py-16 md:py-24 px-4 bg-slate-950 border-t border-gold/5">
+        <div class="max-w-4xl mx-auto bg-gold/5 border-2 border-gold/20 p-8 md:p-16 rounded-[2rem] md:rounded-[4rem] text-center relative overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.05)]">
+            <div class="absolute top-0 right-0 p-4 md:p-8 opacity-10"><i class="fa-solid fa-hourglass-start text-6xl md:text-8xl text-gold"></i></div>
+            <h2 class="font-cinzel text-2xl md:text-3xl text-gold mb-4 md:mb-8 italic uppercase tracking-widest relative z-10">Leituras Limitadas</h2>
+            <p class="text-slate-300 mb-8 md:mb-12 text-sm md:text-lg relative z-10 px-2">
                 Devido à complexidade dos cálculos e à revisão oracular, aceito apenas um número restrito de pedidos por ciclo lunar. Garanta o seu lugar no firmamento agora.
             </p>
-            <div class="flex flex-wrap justify-center gap-12">
+            <div class="flex flex-row justify-center gap-8 md:gap-12 relative z-10">
                 <div class="text-center">
-                    <p class="text-4xl font-black gold-gradient-text" id="spots-count">04</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.2em] mt-2">Vagas Disponíveis</p>
+                    <p class="text-3xl md:text-4xl font-black gold-gradient-text" id="spots-count">04</p>
+                    <p class="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-[0.1em] md:tracking-[0.2em] mt-2">Vagas Disponíveis</p>
                 </div>
+                <div class="w-px h-12 bg-gold/20 hidden md:block"></div>
                 <div class="text-center">
-                    <p class="text-4xl font-black gold-gradient-text" id="timer-minutes">14:52</p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-[0.2em] mt-2">Reserva Expira em</p>
+                    <p class="text-3xl md:text-4xl font-black gold-gradient-text" id="timer-minutes">14:52</p>
+                    <p class="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-[0.1em] md:tracking-[0.2em] mt-2">Reserva Expira em</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="py-40 text-center px-4 mystic-bg relative overflow-hidden">
-        <div class="relative z-10">
+    <section class="py-24 md:py-40 text-center px-4 mystic-bg relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto">
             <!-- FRASE DE IMPACTO REVISADA -->
-            <h2 class="font-cinzel text-4xl md:text-7xl gold-gradient-text mb-16 font-black tracking-tight leading-tight">As estrelas escreveram a sua história.<br>Descubra o seu verdadeiro destino.</h2>
+            <h2 class="font-cinzel text-3xl md:text-6xl lg:text-7xl gold-gradient-text mb-10 md:mb-16 font-black tracking-tight leading-tight px-2">
+                As estrelas escreveram a sua história.<br>
+                <span class="text-2xl md:text-5xl lg:text-6xl mt-2 block font-normal">Descubra o seu verdadeiro destino.</span>
+            </h2>
             
-            <div class="flex flex-col items-center gap-6">
+            <div class="flex flex-col items-center gap-4 md:gap-6 w-full max-w-xs md:max-w-md mx-auto">
                 <!-- Botão de Compra -->
-                <a href="https://pag.ae/81wvr8217/button" target="_blank" class="gold-button font-cinzel font-bold py-10 px-24 rounded-full text-2xl md:text-4xl tracking-[0.1em] uppercase shadow-2xl">
-                    QUERO MEU LIVRO AGORA
+                <a href="https://pag.ae/81wvr8217/button" target="_blank" class="gold-button font-cinzel font-bold py-5 px-6 md:py-8 md:px-12 rounded-full text-lg md:text-2xl lg:text-3xl tracking-[0.1em] uppercase shadow-2xl w-full flex items-center justify-center">
+                    <span>QUERO MEU LIVRO AGORA</span>
                 </a>
                 <!-- Frase de Segurança -->
-                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mt-4"><i class="fa-solid fa-lock mr-2 text-gold"></i> Processamento Seguro</p>
+                <p class="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest font-bold mt-2"><i class="fa-solid fa-lock mr-2 text-gold"></i> Processamento Seguro</p>
             </div>
         </div>
     </section>
 
     <!-- Depoimentos (AGORA APÓS O CTA FINAL) -->
-    <section class="py-24 bg-black px-4 relative z-10">
+    <section class="py-16 md:py-24 bg-black px-4 relative z-10 border-t border-gold/10">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="font-cinzel text-3xl md:text-5xl gold-gradient-text mb-6">Vozes do Destino</h2>
-                <p class="text-slate-400 text-lg">O que dizem aqueles que já consagraram o seu Livro.</p>
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="font-cinzel text-3xl md:text-5xl gold-gradient-text mb-4 md:mb-6">Vozes do Destino</h2>
+                <p class="text-slate-400 text-sm md:text-lg">O que dizem aqueles que já consagraram o seu Livro.</p>
             </div>
             
             <!-- Exatamente 9 depoimentos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Depoimento 1 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Fiquei arrepiada com a precisão! O mapa não só descreveu perfeitamente a minha personalidade, como me deu um norte muito claro. A parte da leitura do Tarot para 2026 é um bônus incrível e que não vi em lado nenhum."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Fiquei arrepiada com a precisão! O mapa não só descreveu perfeitamente a minha personalidade, como me deu um norte muito claro. A parte da leitura do Tarot para 2026 é um bônus incrível e que não vi em lado nenhum."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Mariana S.</h4>
-                            <p class="text-xs text-gold">Empresária</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Mariana S.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Empresária</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 2 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Já tinha feito outros mapas antes, mas o nível de detalhe e a beleza gráfica deste dossiê são surreais. Eu literalmente mandei imprimir e encadernar, virou o meu livro de cabeceira. Os banhos mágicos ajudaram-me imenso!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Já tinha feito outros mapas antes, mas o nível de detalhe e a beleza gráfica deste dossiê são surreais. Eu literalmente mandei imprimir e encadernar, virou o meu livro de cabeceira. Os banhos mágicos ajudaram-me imenso!"</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Carlos E.</h4>
-                            <p class="text-xs text-gold">Designer</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Carlos E.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Designer</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 3 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Foi um divisor de águas absoluto. Entender como funcionam os meus eixos astrológicos e a minha Lilith libertou-me de muitas culpas no amor. Recomendo de olhos fechados para quem procura autoconhecimento profundo e real."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Foi um divisor de águas absoluto. Entender como funcionam os meus eixos astrológicos e a minha Lilith libertou-me de muitas culpas no amor. Recomendo de olhos fechados para quem procura autoconhecimento profundo e real."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Patrícia L.</h4>
-                            <p class="text-xs text-gold">Advogada</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Patrícia L.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Advogada</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 4 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Eu não sabia o que esperar, mas a clareza sobre o meu eixo kármico ajudou-me a mudar de carreira sem medo. As palavras pareciam tocar exatamente naquilo que eu precisava ouvir. Fantástico!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Eu não sabia o que esperar, mas a clareza sobre o meu eixo kármico ajudou-me a mudar de carreira sem medo. As palavras pareciam tocar exatamente naquilo que eu precisava ouvir. Fantástico!"</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Rafael T.</h4>
-                            <p class="text-xs text-gold">Arquiteto</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Rafael T.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Arquiteto</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 5 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Chorei a ler a parte sobre a Lua e a minha afetividade. Parecia que a astróloga estava a ler a minha alma. O guia de banhos também é maravilhoso, prático e tem feito toda a diferença na minha energia."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Chorei a ler a parte sobre a Lua e a minha afetividade. Parecia que a astróloga estava a ler a minha alma. O guia de banhos também é maravilhoso, prático e tem feito toda a diferença na minha energia."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Sofia R.</h4>
-                            <p class="text-xs text-gold">Terapeuta Holística</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Sofia R.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Terapeuta Holística</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 6 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Um trabalho impecável. O mapa revelou bloqueios financeiros que eu arrastava há anos sem perceber porquê. A previsão detalhada para o meu Arcano Regente deste ano já está colada no meu mural de metas!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Um trabalho impecável. O mapa revelou bloqueios financeiros que eu arrastava há anos sem perceber porquê. A previsão detalhada para o meu Arcano Regente deste ano já está colada no meu mural de metas!"</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">João M.</h4>
-                            <p class="text-xs text-gold">Engenheiro</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">João M.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Engenheiro</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 7 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"A análise do Campo Afetivo salvou o meu relacionamento. Percebi finalmente que eu e o meu marido comunicávamos em 'elementos' diferentes. Foi muito curativo. Um dos melhores investimentos que já fiz."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"A análise do Campo Afetivo salvou o meu relacionamento. Percebi finalmente que eu e o meu marido comunicávamos em 'elementos' diferentes. Foi muito curativo. Um dos melhores investimentos que já fiz."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Camila B.</h4>
-                            <p class="text-xs text-gold">Psicóloga</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Camila B.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Psicóloga</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 8 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Comprei o mapa como presente de aniversário para a minha filha e acabei por comprar para mim logo a seguir. A estética do dossiê é de um luxo impressionante e o conteúdo muito bem fundamentado."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Comprei o mapa como presente de aniversário para a minha filha e acabei por comprar para mim logo a seguir. A estética do dossiê é de um luxo impressionante e o conteúdo muito bem fundamentado."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Teresa F.</h4>
-                            <p class="text-xs text-gold">Professora</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Teresa F.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Professora</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Depoimento 9 -->
-                <div class="card-glass p-10 rounded-[2rem] relative">
-                    <div class="flex text-gold mb-6 text-sm">
+                <div class="card-glass p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] relative md:col-span-2 lg:col-span-1 md:mx-auto lg:mx-0 max-w-lg lg:max-w-none w-full">
+                    <div class="flex text-gold mb-4 md:mb-6 text-xs md:text-sm">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 italic mb-8">"Profundo, respeitoso e nada parecido com aquelas leituras rasas de horóscopo de revista. Sente-se o cuidado e o rigor astrológico em cada palavra. Este é o verdadeiro mapa da vida de uma pessoa."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
-                            <i class="fa-solid fa-user text-gold/50"></i>
+                    <p class="text-slate-300 italic mb-6 md:mb-8 text-sm md:text-base leading-relaxed">"Profundo, respeitoso e nada parecido com aquelas leituras rasas de horóscopo de revista. Sente-se o cuidado e o rigor astrológico em cada palavra. Este é o verdadeiro mapa da vida de uma pessoa."</p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center border border-gold/30">
+                            <i class="fa-solid fa-user text-gold/50 text-sm md:text-base"></i>
                         </div>
                         <div>
-                            <h4 class="font-cinzel font-bold text-white tracking-wider">Lucas V.</h4>
-                            <p class="text-xs text-gold">Médico</p>
+                            <h4 class="font-cinzel font-bold text-white tracking-wider text-sm md:text-base">Lucas V.</h4>
+                            <p class="text-[10px] md:text-xs text-gold">Médico</p>
                         </div>
                     </div>
                 </div>
@@ -436,77 +453,94 @@
     </section>
 
     <!-- FAQ (Perguntas Frequentes - AGORA APÓS DEPOIMENTOS) -->
-    <section class="py-24 px-4 bg-slate-950 relative z-10 border-t border-gold/10">
+    <section class="py-16 md:py-24 px-4 bg-slate-950 relative z-10 border-t border-gold/10">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-cinzel text-3xl md:text-5xl text-white mb-6">Dúvidas Frequentes</h2>
-                <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="font-cinzel text-3xl md:text-5xl text-white mb-4 md:mb-6">Dúvidas Frequentes</h2>
+                <div class="w-12 md:w-16 h-1 bg-gold mx-auto rounded-full"></div>
             </div>
 
-            <div class="space-y-2">
-                <div class="faq-box">
-                    <h4 class="font-cinzel font-bold text-xl text-[#f3e5ab] mb-3"><i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm"></i>Como e quando recebo o meu Livro das Estrelas?</h4>
-                    <p class="text-slate-400 pl-8 leading-relaxed">Após a confirmação do pagamento, você receberá a sua obra exclusiva e personalizada em formato PDF de altíssima resolução no seu e-mail (ou WhatsApp), pronto para ler no telemóvel, computador ou para imprimir.</p>
+            <div class="space-y-4 md:space-y-2">
+                <div class="faq-box pb-6 md:pb-6">
+                    <h4 class="font-cinzel font-bold text-lg md:text-xl text-[#f3e5ab] mb-2 md:mb-3 flex items-start md:items-center">
+                        <i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm mt-1 md:mt-0 shrink-0"></i>
+                        <span>Como e quando recebo o meu Livro das Estrelas?</span>
+                    </h4>
+                    <p class="text-slate-400 pl-7 md:pl-8 leading-relaxed text-sm md:text-base">Após a confirmação do pagamento, você receberá a sua obra exclusiva e personalizada em formato PDF de altíssima resolução no seu e-mail (ou WhatsApp), pronto para ler no telemóvel, computador ou para imprimir.</p>
                 </div>
-                <div class="faq-box">
-                    <h4 class="font-cinzel font-bold text-xl text-[#f3e5ab] mb-3"><i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm"></i>Preciso de saber a minha hora exata de nascimento?</h4>
-                    <p class="text-slate-400 pl-8 leading-relaxed">A hora é altamente recomendada para o cálculo de extrema precisão do seu Ascendente, Meio do Céu e do desenho das Casas Astrológicas, que são os pilares da sua jornada terrena.</p>
+                <div class="faq-box pb-6 md:pb-6">
+                    <h4 class="font-cinzel font-bold text-lg md:text-xl text-[#f3e5ab] mb-2 md:mb-3 flex items-start md:items-center">
+                        <i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm mt-1 md:mt-0 shrink-0"></i>
+                        <span>Preciso de saber a minha hora exata de nascimento?</span>
+                    </h4>
+                    <p class="text-slate-400 pl-7 md:pl-8 leading-relaxed text-sm md:text-base">A hora é altamente recomendada para o cálculo de extrema precisão do seu Ascendente, Meio do Céu e do desenho das Casas Astrológicas, que são os pilares da sua jornada terrena.</p>
                 </div>
-                <div class="faq-box border-none">
-                    <h4 class="font-cinzel font-bold text-xl text-[#f3e5ab] mb-3"><i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm"></i>O pagamento é realmente seguro?</h4>
-                    <p class="text-slate-400 pl-8 leading-relaxed">Absolutamente. O seu pagamento é processado através do ambiente encriptado e certificado do PagSeguro. Os seus dados bancários não são partilhados e ficam 100% protegidos pelo sistema.</p>
+                <div class="faq-box border-none pb-0 md:pb-0">
+                    <h4 class="font-cinzel font-bold text-lg md:text-xl text-[#f3e5ab] mb-2 md:mb-3 flex items-start md:items-center">
+                        <i class="fa-solid fa-circle-question text-gold/50 mr-3 text-sm mt-1 md:mt-0 shrink-0"></i>
+                        <span>O pagamento é realmente seguro?</span>
+                    </h4>
+                    <p class="text-slate-400 pl-7 md:pl-8 leading-relaxed text-sm md:text-base">Absolutamente. O seu pagamento é processado através do ambiente encriptado e certificado do PagSeguro. Os seus dados bancários não são partilhados e ficam 100% protegidos pelo sistema.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer com Contactos CLICÁVEIS -->
-    <footer class="py-16 bg-black text-center border-t border-gold/10">
+    <footer class="py-12 md:py-16 bg-black text-center border-t border-gold/10">
         <div class="max-w-4xl mx-auto px-4">
             
             <!-- Estrelas de Decoração -->
-            <div class="mb-10 text-gold/30">
-                <i class="fa-solid fa-star-of-david text-xl mx-4 hover:text-gold transition"></i>
-                <i class="fa-solid fa-star-of-david text-xl mx-4 hover:text-gold transition"></i>
-                <i class="fa-solid fa-star-of-david text-xl mx-4 hover:text-gold transition"></i>
+            <div class="mb-8 md:mb-10 text-gold/30">
+                <i class="fa-solid fa-star-of-david text-lg md:text-xl mx-2 md:mx-4 hover:text-gold transition"></i>
+                <i class="fa-solid fa-star-of-david text-lg md:text-xl mx-2 md:mx-4 hover:text-gold transition"></i>
+                <i class="fa-solid fa-star-of-david text-lg md:text-xl mx-2 md:mx-4 hover:text-gold transition"></i>
             </div>
             
             <!-- Contactos de Atendimento (AGORA SÃO LINKS ATIVOS) -->
-            <div class="mb-12 flex flex-col md:flex-row justify-center items-center gap-6 text-slate-300">
+            <div class="mb-10 md:mb-12 flex flex-col lg:flex-row justify-center items-center gap-4 md:gap-6 text-slate-300 w-full flex-wrap">
                 <!-- Botão WhatsApp -->
-                <a href="https://wa.me/5511932186193?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Livro%20das%20Estrelas." target="_blank" class="flex items-center gap-3 bg-white/5 py-3 px-6 rounded-full border border-gold/20 hover:border-gold hover:text-white transition cursor-pointer">
-                    <i class="fa-brands fa-whatsapp text-[#25D366] text-2xl"></i>
-                    <span class="text-sm md:text-base tracking-widest">(11) 932186193</span>
+                <a href="https://wa.me/5511932186193?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Livro%20das%20Estrelas." target="_blank" class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-full border border-gold/20 hover:border-gold hover:text-white transition cursor-pointer w-full md:w-auto max-w-sm">
+                    <i class="fa-brands fa-whatsapp text-[#25D366] text-xl md:text-2xl"></i>
+                    <span class="text-xs md:text-sm tracking-widest">(11) 93218-6193</span>
                 </a>
                 
-                <div class="hidden md:block w-px h-8 bg-gold/30"></div>
+                <div class="hidden lg:block w-px h-8 bg-gold/30"></div>
+                
+                <!-- Botão Instagram -->
+                <a href="https://www.instagram.com/mapa.astral.premium?igsh=cmplZGV6NGM4dnBm" target="_blank" class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-full border border-gold/20 hover:border-gold hover:text-white transition cursor-pointer w-full md:w-auto max-w-sm">
+                    <i class="fa-brands fa-instagram text-[#E1306C] text-xl md:text-2xl"></i>
+                    <span class="text-xs md:text-sm tracking-widest">@mapa.astral.premium</span>
+                </a>
+
+                <div class="hidden lg:block w-px h-8 bg-gold/30"></div>
                 
                 <!-- Botão Email -->
-                <a href="mailto:mapaastrologicopremium@gmail.com" class="flex items-center gap-3 bg-white/5 py-3 px-6 rounded-full border border-gold/20 hover:border-gold hover:text-white transition cursor-pointer">
-                    <i class="fa-regular fa-envelope text-gold text-2xl"></i>
-                    <span class="text-sm md:text-base tracking-wider">mapaastrologicopremium@gmail.com</span>
+                <a href="mailto:mapaastrologicopremium@gmail.com" class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-full border border-gold/20 hover:border-gold hover:text-white transition cursor-pointer w-full md:w-auto max-w-sm overflow-hidden">
+                    <i class="fa-regular fa-envelope text-gold text-xl md:text-2xl shrink-0"></i>
+                    <span class="text-[10px] md:text-xs tracking-wider truncate">mapaastrologicopremium@gmail.com</span>
                 </a>
             </div>
 
             <!-- Direitos de Autor e Aviso -->
-            <p class="text-slate-500 text-sm font-medium tracking-[0.3em] uppercase mb-4">Astral Studio Pro © 2026</p>
-            <p class="text-slate-700 text-[10px] max-w-xl mx-auto italic">Este material possui fins de autoconhecimento e entretenimento espiritual. Não substitui aconselhamento profissional de saúde ou jurídico.</p>
+            <p class="text-slate-500 text-xs md:text-sm font-medium tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4">Astral Studio Pro © 2026</p>
+            <p class="text-slate-700 text-[9px] md:text-[10px] max-w-xl mx-auto italic px-2 leading-relaxed">Este material possui fins de autoconhecimento e entretenimento espiritual. Não substitui aconselhamento profissional de saúde ou jurídico.</p>
         </div>
     </footer>
 
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a href="https://wa.me/5511932186193?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Livro%20das%20Estrelas." target="_blank" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform float-whatsapp z-[100]" aria-label="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5511932186193?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Livro%20das%20Estrelas." target="_blank" class="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-[#25D366] text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-[0_0_15px_rgba(37,211,102,0.4)] md:shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform float-whatsapp z-[100]" aria-label="Fale conosco no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Notificação de Consagração -->
-    <div id="social-proof" class="fixed bottom-10 left-10 hidden md:flex bg-slate-900/95 border border-gold/30 text-white p-6 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] items-center gap-6 z-50 transition-opacity duration-500" style="display: none;">
-        <div class="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center text-gold text-2xl">
+    <div id="social-proof" class="fixed top-4 md:top-auto md:bottom-10 left-1/2 md:left-10 -translate-x-1/2 md:translate-x-0 bg-slate-900/95 border border-gold/30 text-white p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.8)] md:shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex items-center gap-4 md:gap-6 z-[90] transition-opacity duration-500 w-[90%] md:w-auto max-w-sm" style="display: none; opacity: 0;">
+        <div class="w-10 h-10 md:w-14 md:h-14 shrink-0 bg-gold/10 rounded-full flex items-center justify-center text-gold text-lg md:text-2xl">
             <i class="fa-solid fa-sparkles"></i>
         </div>
-        <div class="text-sm">
-            <p class="font-black text-gold" id="sp-name">Larissa Ferreira</p>
-            <p class="text-slate-400 font-medium italic">consagrou o seu Livro das Estrelas agora</p>
+        <div class="text-xs md:text-sm overflow-hidden">
+            <p class="font-black text-gold truncate" id="sp-name">Larissa Ferreira</p>
+            <p class="text-slate-400 font-medium italic truncate">consagrou o seu Livro das Estrelas agora</p>
         </div>
     </div>
 
@@ -514,8 +548,13 @@
         // --- CRIADOR DO CÉU MÍSTICO ---
         const starsContainer = document.getElementById('stars-container');
         
+        // Verifica se está no telemóvel para reduzir elementos
+        const isMobile = window.innerWidth < 768;
+        const numStars = isMobile ? 80 : 150;
+        const numIcons = isMobile ? 10 : 20;
+        
         // 1. Estrelas Brancas e Douradas Pequenas
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < numStars; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 2.5 + 'px';
@@ -534,12 +573,15 @@
 
         // 2. Elementos Esotéricos Flutuantes (Mandalas, Luas, Planetas - CONSTANTES E VISÍVEIS)
         const mysticIcons = ['fa-moon', 'fa-sun', 'fa-ring', 'fa-star-of-david', 'fa-eye', 'fa-atom', 'fa-meteor'];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < numIcons; i++) {
             const icon = document.createElement('i');
             const randomIcon = mysticIcons[Math.floor(Math.random() * mysticIcons.length)];
             icon.className = `fa-solid ${randomIcon} esoteric-bg-element`;
             
-            const fontSize = Math.floor(Math.random() * 20 + 15) + 'px'; 
+            // Tamanhos um pouco menores no mobile
+            const minSize = isMobile ? 10 : 15;
+            const sizeVar = isMobile ? 15 : 20;
+            const fontSize = Math.floor(Math.random() * sizeVar + minSize) + 'px'; 
             icon.style.fontSize = fontSize;
             icon.style.top = Math.random() * 100 + '%';
             icon.style.left = Math.random() * 100 + '%';
@@ -556,22 +598,29 @@
         const spName = document.getElementById('sp-name');
 
         function triggerSocialProof() {
-            // Se a tela for muito pequena (mobile), evitamos mostrar para não tapar botões
-            if(window.innerWidth < 768) return;
-            
             const randomName = names[Math.floor(Math.random() * names.length)];
             spName.innerText = randomName;
-            sp.style.display = 'flex';
-            setTimeout(() => { sp.style.opacity = '1'; }, 50);
             
+            // Força o display block antes de animar a opacidade
+            sp.style.display = 'flex';
+            
+            // Pequeno delay para o navegador registrar o display:flex antes de mudar a opacidade
+            setTimeout(() => { 
+                sp.style.opacity = '1'; 
+            }, 50);
+            
+            // Inicia o fade-out após 6 segundos (um pouco mais rápido para mobile)
             setTimeout(() => { 
                 sp.style.opacity = '0';
-                setTimeout(() => { sp.style.display = 'none'; }, 500);
-            }, 8000);
+                setTimeout(() => { sp.style.display = 'none'; }, 500); // Esconde depois da transição
+            }, 6000);
         }
 
-        setTimeout(triggerSocialProof, 4000);
-        setInterval(triggerSocialProof, 28000);
+        // Delay inicial maior para a primeira notificação
+        setTimeout(triggerSocialProof, 5000);
+        
+        // Intervalo entre notificações
+        setInterval(triggerSocialProof, 35000);
 
         // --- CRONÔMETRO DE URGÊNCIA ---
         let timer = 892;
